@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp">
+   
+   <head>
+      <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+   </head>
+   
+   <body>
+      <div ng-controller="appCtrl">
+         <h1>Hello World</h1>
+         Your name: {[{firstname}]} {[{lastname}]}
+         <input type="text" ng-model="firstname">
+         <input type="text" ng-model="lastname">
+      </div>
+
+      <div ng-controller="usersCtrl">
+         <ul ng-repeat="user in users">
+            <li>id: {[{user.id}]}, name: {[{user.name}]} <a href="#" ng-click="removeUser( user.id )">remove</a></li>
+         </ul>
+         <input type="text" ng-model="newName">
+         <button ng-click="createUser()">Add User</button>
+         <button ng-click="updateUser(2)">Update User</button>
+
+         <button ng-click="fetchUsers()">Fetch Users</button>
+      </div>
+
+
+
+      <script src= "{{ url_for('static', filename='main.js') }}"></script>
+      <script src= "{{ url_for('static', filename='moment.js') }}"></script>
+
+      
+   </body>
+</html>
