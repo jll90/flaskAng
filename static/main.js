@@ -46,8 +46,8 @@ myApp.controller("usersCtrl", ["$scope", "$http", function ($scope, $http){
 				method: "DELETE",
 				url: '/api/v1.0/users' + '/' + index
 			}).then(function successCallback(response){
-				if (response.status === 204){
-					$scope.users.splice(index, 1);
+				if (response.status === 200){
+					$scope.users = response.data['users'];
 				}
 			}, function errorCallback(response){
 				//handle error

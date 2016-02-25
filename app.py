@@ -13,7 +13,7 @@ users = [
 		'name': 'antonio'
 	},
 	{
-		'id': 4,
+		'id': 3,
 		'name': 'antonio2'
 	}
 ]
@@ -72,7 +72,7 @@ def delete_user(user_id):
 	if len(user) == 0:
 		abort(404)
 	users.remove(user[0])
-	return jsonify({'result': True}), 204
+	return jsonify({'users': users}), 200
 
 
 
